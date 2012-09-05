@@ -343,6 +343,7 @@ class Post(models.Model):
     class Meta:
         app_label = 'askbot'
         db_table = 'askbot_post'
+        get_latest_by = 'last_edited_at'
 
 
     def parse_post_text(self):

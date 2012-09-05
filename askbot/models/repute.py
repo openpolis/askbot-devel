@@ -48,6 +48,7 @@ class Vote(models.Model):
         unique_together = ('user', 'voted_post')
         app_label = 'askbot'
         db_table = u'vote'
+        get_latest_by = 'voted_at'
 
     def __unicode__(self):
         return '[%s] voted at %s: %s' %(self.user, self.voted_at, self.vote)
