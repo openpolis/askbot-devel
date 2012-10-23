@@ -1,14 +1,32 @@
 /* General Predifined classes, read more in lesscss.org */
 
 /* Variables for Colors*/
+@red:#c6242a;
+@redDark:#9b2427;
+@green:#008989;
+@greenDark:#397267;
 
-@header-color:#16160f;
-@link:#1b79bd;
-@question-link:#464646;
-@button-label:#4a757f;
+@header-color:#fff;
+@header-link-color:@green;
+@header-text-color:@greenDark;
+@link:@green;
+@question-link:@red;
+@button-label:#fff;
+@button-color: @green;
+@button-color-dark: @greenDark;
 @section-title:#7ea9b3;
 @info-text:#707070;
 @info-text-dark:#525252;
+@navbar-text: @green;
+@secondary-header:@red;
+@secondary-header-dark:@redDark;
+@secondary-header-color: #fff;
+@footer-color:@red;
+@footer-color-dark:@redDark;
+@footer-link: #fff;
+@footer-text: #fff;
+@tabs-link: @green;
+@tabs-link-hover: @greenDark;
 
 /* Variables for fonts*/
 
@@ -28,14 +46,15 @@
     color:@button-label;
     font-family:@main-font;
     .text-shadow(0px,1px,0px,#c6d9dd);
-    border-top:#eaf2f3 1px solid;
-    .linear-gradient(#d1e2e5,#a9c2c7);
+//    border-top:darken(@button-color, 15%) 1px solid;
+    .linear-gradient(@button-color,@button-color-dark);
     .rounded-corners(4px);
     .box-shadow(1px, 1px, 2px, #636363)
 }
 
 .button-style-hover{
-    .linear-gradient(#cde5e9,#94b3ba);
+//    .linear-gradient(#cde5e9,#94b3ba);
+    .linear-gradient(darken(@button-color,10%),darken(@button-color-dark,10%));
     text-decoration:none;
     .text-shadow(0px, 1px, 0px, #c6d9dd);
 }
@@ -98,4 +117,35 @@
     -webkit-border-bottom-right-radius:@radio;
     -webkit-border-top-right-radius:@radio;
 }
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+/* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#page-wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+/* Negative indent footer by it's height */
+  margin: 0 auto -72px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer-wrapper {
+  height: 72px;
+}
+
+#footer-wrapper {
+  background-color: @footer-color-dark;
+}
+
+
 
