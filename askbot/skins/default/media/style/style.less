@@ -347,20 +347,16 @@ body.user-messages {
     font-family:@main-font;
 
     #homeButton{
-        border-right:#afaf9e 1px solid;
-       .sprites(-6px,-36px);
+        border-right:#FFF 1px solid;
+        background: transparent url('../images/logo-small.png') no-repeat;
         height:55px;
-       width:43px;
+       width:145px;
        display:block;
        float:left;
     }
     
-    #homeButton:hover{
-        .sprites(-6px-45,-36px);
-    }
-    
     #scopeWrapper{
-        width:688px;
+        width:680px;
         float:left;
         
         a{
@@ -411,7 +407,7 @@ body.user-messages {
     border: 1px solid #c9c9b5;
     float:right;
     height:42px;
-    margin:6px 0px 0px 15px;
+    margin:6px 0px 0px 5px;
 
     .searchInput, .searchInputCancelable{
         font-size: 26px;
@@ -489,17 +485,22 @@ body.anon {
 
 
 #askButton{ /* check blocks/secondary_header.html and widgets/ask_button.html*/
-    line-height:44px;
-    margin-top:6px;
-    float:right;
+    line-height:55px;
+    padding-left: 10px; padding-right: 10px;
+    float:left;
     text-transform:uppercase;
-    .button-style(42px, 20px);
-    width: 200px;/* to match width of sidebar */
+    border-right:#FFF 1px solid;
+    height:55px;
+    display:block;
+    color: #FFF;
+
+//    .button-style(42px, 20px);
+//    width: 200px;/* to match width of sidebar */
 }
 
-#askButton:hover{
-    .button-style-hover;
-}
+//#askButton:hover{
+//    .button-style-hover;
+//}
 
 /* ----- Content layout, check two_column_body.html or one_column_body.html ----- */
 
@@ -955,9 +956,11 @@ ul#searchTags {
     {
         margin-top:3px;
         font-size: 14px;
-        line-height:14px;
+        line-height:28px;
         color: #646464;
     }
+    // fix for 2-word count
+    .counts .answers div { line-height:14px; }
     
     .tags {
         margin: 0 0 0 1px;
@@ -967,23 +970,14 @@ ul#searchTags {
         text-align: center;
         margin: 0 3px;
         padding: 8px 2px 0px 2px;
-        width: 51px;
+        width: 55px;
         float: right;
-        height:44px;
+        height:55px;
         border:#dbdbd4 1px solid;
+
+        background-color: @grayLighter;
     }
 
-    .votes{
-        background: url(../images/vote-background.png) repeat-x;
-    }
-
-    .answers{
-        background:url(../images/answers-background.png) repeat-x;
-    }
-    
-    .views {
-        background:url(../images/view-background.png) repeat-x;
-    }
 
     .no-votes .item-count {
         color: #b1b5b6;
@@ -2659,13 +2653,28 @@ ins .post-tag, ins p, ins {
 
 
 /* ----- Footer links , check blocks/footer.html----- */
+.footer-wrapper {
+  .linear-gradient(@footer-color, @footer-color-dark);
+  padding: 10px 0;
+
+  .footer-column {
+      width: 30%;
+      padding-right: 3%;
+      margin-top: 10px;
+      float:left;
+      color: #fff;
+
+      a { text-decoration: underline; }
+      h2 { padding: 0; }
+      p { margin-top: 6px; margin-bottom:8px; }
+      a, p, h2 { color: #fff; }
+  }
+}
 
 #ground {
     width: 100%;
     clear: both;
-    border-top: 1px solid #000;
     padding: 6px 0 0 0;
-    .linear-gradient(@footer-color, @footer-color-dark);
     font-size:16px;
     font-family:@main-font;
 
